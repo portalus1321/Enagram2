@@ -19,13 +19,13 @@ function App() {
 
   return (
     <div className='flex flex-col items-center justify-center h-screen bg-gradient-to-r to-black from-emerald-500'>
-      <div className='absolute z-30 top-0 left-0 w-1/4 border-[5px] m-[10px] bg-black/10 backdrop-blur-md border-white/20 px-10 py-2 rounded-[15px] shadow-lg scale-[80%] origin-top-left'>
+      <div className='absolute z-30 top-0 left-0 w-[35vw] border-[5px] m-[10px] bg-black/10 backdrop-blur-md border-white/20 px-10 py-2 rounded-[15px] shadow-lg scale-[80%] origin-top-left'>
         <Projectlist onHoverChange={(newVal) => setValue(newVal)}/>
        
       </div>
 {value !== 0 && (      
       <div
-       className='absolute mt-[10px] top-0 z-10 left-1/4 w-1/4 p-10 border-[5px] bg-black/10 backdrop-blur-sm border-white/20 rounded-[15px] shadow-lg min-w-0 font-semibold leading-6 text-white space-y-10 scale-[80%] origin-top-left'>
+       className='absolute mt-[10px] top-0 z-10 left-[35vw] w-1/4 p-10 border-[5px] bg-black/10 backdrop-blur-sm border-white/20 rounded-[15px] shadow-lg min-w-0 font-semibold leading-6 text-white space-y-10 scale-[80%] origin-top-left'>
         <h1 className="text-3xl">
           {selectedProject ? selectedProject.projectName : "JLPT Learning Website"}
         </h1>
@@ -67,8 +67,8 @@ function App() {
         <Social />
       </div>
     
-        <div className="m-[10px] bottom-0 overflow-hidden left-0 absolute w-1/4 h-1/4  rounded-xl shadow-lg">
-          {value !== 0 && (<iframe src={selectedProject.href} className=" border-none relative w-full h-full origin-top-left"></iframe>)}
+        <div className="absolute m-[10px] bottom-0 overflow-hidden left-0 w-[30vw] h-[30vh]  rounded-xl shadow-lg">
+          {value !== 0 && (<iframe src={selectedProject.href} className="border-none relative w-[100vw] h-[100vh] scale-[0.3333] origin-top-left"></iframe>)}
           
         </div>
 
