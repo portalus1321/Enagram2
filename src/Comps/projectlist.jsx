@@ -34,7 +34,7 @@ const Projectlist = ({ onHoverChange }) => {
                 <div className={classNames(statuses[deployment.status], 'flex-none rounded-full p-1')}>
                   <div className="h-2 w-2 rounded-full bg-current" />
                 </div>
-                <h2 className="text-sm font-semibold flex leading-6 px-[10px] text-white">
+                <h2 className="font-semibold flex px-[10px] text-white text-[10px] sm:text-sm">
                   <a href={deployment.href} className="flex gap-x-2">
                     <span className="truncate">{deployment.teamName}</span>
                     <span className="text-gray-400">/</span>

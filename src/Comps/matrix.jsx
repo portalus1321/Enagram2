@@ -16,7 +16,7 @@ export default function MatrixRain() {
     const fontScaleFactor = 6.8;
     const scaleFontWithSpeed = true;
 
-    const streamActiveProbability = 1.0;
+    const streamActiveProbability = 0.1;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
