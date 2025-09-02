@@ -78,7 +78,7 @@ return (
     <section className="container">
         <div id="carousel">
             {[0, 1, 2, 3, 4,5,6,7,8,9,10].map((id) => (
-                <figure className=" bg-slate-50/10 rounded-[10px] p-2 origin-top"
+                <figure className=" bg-slate-50/10 rounded-[10px] p-[0px] origin-top"
                     key={id}
                     style={{
                         WebkitTransform: `rotateY(${getRotation(id, current)}deg) translateX(${getPosition(id, current)}px) translateZ(288px)`,

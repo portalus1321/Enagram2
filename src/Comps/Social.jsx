@@ -45,7 +45,7 @@ export default function Social() {
         },
         {
             name: "LinkedIn",
-            url: "https://linkedin.com/",
+            url: "https://www.linkedin.com/in/anzor-datunashvili-55b2612b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
             icon: <LinkedInIcon />,
         },
         {

@@ -23,7 +23,7 @@ const Projectlist = ({ onHoverChange }) => {
   console.log(deployments);
   
   return (
-      <ul role="list" className="divide-y divide-white/5">
+      <ul role="list" className="divide-y divide-white/5 ">
         {deployments.map((deployment) => (
           <li key={deployment.id}
              onMouseEnter={() => onHoverChange(deployment.id)}
@@ -34,7 +34,7 @@ const Projectlist = ({ onHoverChange }) => {
                 <div className={classNames(statuses[deployment.status], 'flex-none rounded-full p-1')}>
                   <div className="h-2 w-2 rounded-full bg-current" />
                 </div>
-                <h2 className="font-semibold flex px-[10px] text-white text-[10px] sm:text-sm">
+                <h2 className="font-semibold flex px-[10px] text-white text-[10px] sm:text-[15px]">
                   <a href={deployment.href} className="flex gap-x-2">
                     <span className="truncate">{deployment.teamName}</span>
                     <span className="text-gray-400">/</span>
@@ -54,7 +54,7 @@ const Projectlist = ({ onHoverChange }) => {
             <div
               className={classNames(
                 environments[deployment.environment],
-                'rounded-full flex-none py-1 px-2 text-xs font-medium ring-1 ring-inset'
+                'rounded-full flex-none py-1 px-2 text-xs font-medium ring-1 ring-inset hidden lg:flex sm:hiden'
               )}
             >
               {deployment.environment}

@@ -78,7 +78,7 @@ export default function ScrollSlider() {
       <section className="container">
          <div id="carousel">
             {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((id) => (
-               <figure className=" bg-slate-50/10 rounded-[10px] p-2 bg-gradient-to-b from-black/50 to-black/0 origin-top "
+               <figure className=" bg-slate-50/10 rounded-[10px] p-[0px] bg-gradient-to-b from-black/50 to-black/0 origin-top "
                   key={id}
                   style={{
                      WebkitTransform: `rotateY(${getRotation(id, current)}deg) translateX(${getPosition(id, current)}px) translateZ(288px)`,
