@@ -7,6 +7,30 @@ import Lcomobox from '../../Components/FormComps/Comobox';
 import LCheckbox from '../../Components/FormComps/Checkbox';
 import React, { useState } from "react";
 
+function splitLongWord(word, maxLength = 20) {
+    const parts = [];
+    for (let i = 0; i < word.length; i += maxLength) {
+        parts.push(word.slice(i, i + maxLength));
+    }
+    return parts;
+}
+
+function wrapWord(word, bgColor) {
+    const maxLength = 20; // maximum characters per chunk
+    const parts = splitLongWord(word, maxLength);
+    return parts
+        .map(part => `<span style="
+            background:${bgColor};
+            color:white;
+            display:inline-block;
+            word-break:break-word;
+            overflow-wrap:break-word;
+            padding:2px 4px;
+            border-radius:2px;
+        ">${part}</span>`)
+        .join('');
+}
+
 async function diffTexts(oldStr, newStr, setProgress) {
     const oldWords = oldStr.split(" ");
     const newWords = newStr.split(" ");
@@ -23,9 +47,8 @@ async function diffTexts(oldStr, newStr, setProgress) {
                 dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
             }
         }
-
         setProgress(Math.floor((i / m) * 50));
-        await new Promise((resolve) => setTimeout(resolve, 0));
+        await new Promise(resolve => setTimeout(resolve, 0));
     }
 
     let i = m, j = n;
@@ -40,34 +63,35 @@ async function diffTexts(oldStr, newStr, setProgress) {
             right = newWords[j - 1] + " " + right;
             i--; j--;
         } else if (dp[i - 1][j] >= dp[i][j - 1]) {
-            left = `<span style="background:#f28b82; color:white; display:inline-block; word-break:break-word;">${oldWords[i - 1]}</span> ` + left;
+            left = wrapWord(oldWords[i - 1], '#f28b82') + " " + left;
             i--;
         } else {
-            right = `<span style="background:#52c955; color:white display:inline-block; word-break:break-word;">${newWords[j - 1]}</span> ` + right;
+            right = wrapWord(newWords[j - 1], '#52c955') + " " + right;
             j--;
         }
         stepCount++;
         setProgress(50 + Math.floor((stepCount / totalSteps) * 50));
-        await new Promise((resolve) => setTimeout(resolve, 0));
+        await new Promise(resolve => setTimeout(resolve, 0));
     }
 
     while (i > 0) {
-        left = `<span style="color:red; display:inline-block; word-break:break-word;">${oldWords[i - 1]}</span> ` + left;
+        left = wrapWord(oldWords[i - 1], '#f28b82') + " " + left;
         i--; stepCount++;
         setProgress(50 + Math.floor((stepCount / totalSteps) * 50));
-        await new Promise((resolve) => setTimeout(resolve, 0));
+        await new Promise(resolve => setTimeout(resolve, 0));
     }
 
     while (j > 0) {
-        right = `<span style="color:green; display:inline-block; word-break:break-word;">${newWords[j - 1]}</span> ` + right;
+        right = wrapWord(newWords[j - 1], '#52c955') + " " + right;
         j--; stepCount++;
         setProgress(50 + Math.floor((stepCount / totalSteps) * 50));
-        await new Promise((resolve) => setTimeout(resolve, 0));
+        await new Promise(resolve => setTimeout(resolve, 0));
     }
 
     setProgress(100);
     return { left, right };
 }
+
 
 const TextCompare = () => {
     const [oldText, setOldText] = useState("");
