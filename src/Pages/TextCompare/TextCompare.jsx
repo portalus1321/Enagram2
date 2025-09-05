@@ -40,10 +40,10 @@ async function diffTexts(oldStr, newStr, setProgress) {
             right = newWords[j - 1] + " " + right;
             i--; j--;
         } else if (dp[i - 1][j] >= dp[i][j - 1]) {
-            left = `<span style="background:#f28b82; color:white">${oldWords[i - 1]}</span> ` + left;
+            left = `<span style="background:#f28b82; color:white; display:inline-block; word-break:break-word;">${oldWords[i - 1]}</span> ` + left;
             i--;
         } else {
-            right = `<span style="background:#52c955; color:white">${newWords[j - 1]}</span> ` + right;
+            right = `<span style="background:#52c955; color:white display:inline-block; word-break:break-word;">${newWords[j - 1]}</span> ` + right;
             j--;
         }
         stepCount++;
@@ -52,14 +52,14 @@ async function diffTexts(oldStr, newStr, setProgress) {
     }
 
     while (i > 0) {
-        left = `<span style="color:red">${oldWords[i - 1]}</span> ` + left;
+        left = `<span style="color:red; display:inline-block; word-break:break-word;">${oldWords[i - 1]}</span> ` + left;
         i--; stepCount++;
         setProgress(50 + Math.floor((stepCount / totalSteps) * 50));
         await new Promise((resolve) => setTimeout(resolve, 0));
     }
 
     while (j > 0) {
-        right = `<span style="color:green">${newWords[j - 1]}</span> ` + right;
+        right = `<span style="color:green; display:inline-block; word-break:break-word;">${newWords[j - 1]}</span> ` + right;
         j--; stepCount++;
         setProgress(50 + Math.floor((stepCount / totalSteps) * 50));
         await new Promise((resolve) => setTimeout(resolve, 0));
