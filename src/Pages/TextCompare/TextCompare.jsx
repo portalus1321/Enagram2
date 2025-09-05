@@ -22,9 +22,7 @@ function wrapWord(word, bgColor) {
         .map(part => `<span style="
             background:${bgColor};
             color:white;
-            display:inline-block;
-            word-break:break-word;
-            overflow-wrap:break-word;
+        
             padding:2px 4px;
             border-radius:2px;
         ">${part}</span>`)
