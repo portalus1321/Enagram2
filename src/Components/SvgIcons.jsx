@@ -1,0 +1,77 @@
+import { ReactComponent as SpeechSvg } from '../Components/Speach.svg';
+import { ReactComponent as SpellingSvg } from '../Components/Spelling.svg';
+import { ReactComponent as TextCompSvg } from './../Components/TextComp.svg';
+
+import React from "react";
+
+
+export const PdfIcon = ({ className = "", width = 24, height = 24, stroke = "currentColor" }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 24 24"
+    fill="none"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4.99705 21.0038H19.0029C20.1079 21.0038 21.0037 20.108 21.0037 19.003V4.99717C21.0037 3.89214 20.1079 2.99634 19.0029 2.99634H8.99872C7.89369 2.99634 6.99788 3.89214 6.99788 4.99717V19.003C6.99788 20.108 6.10208 21.0038 4.99705 21.0038ZM4.99705 21.0038C3.89202 21.0038 2.99622 20.108 2.99622 19.003V7.99842C2.99622 6.89339 3.89202 5.99759 4.99705 5.99759H6.99788"
+      stroke={stroke}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10.4995 6.99805H17.5024"
+      stroke={stroke}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10.4995 10.9998H17.5024"
+      stroke={stroke}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10.4995 15.0013H17.5024"
+      stroke={stroke}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+// Icon 1
+export const SpeechIcon = ({ className = "", width = 24, height = 24, stroke = "currentColor" }) => (
+  <svg width={width} height={height} viewBox="0 0 24 24" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 16V4" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M12 21V6" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M8 19V3" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M4 15V8" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M20.0537 15.4297V10.4297" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+// Icon 2
+export const SpellingIcon = ({ className = "", width = 24, height = 24, fill = "currentColor" }) => (
+  <svg width={width} height={height} viewBox="0 0 24 24" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+    <path d="M21 8L10 19L5 14" stroke={fill} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M1.99072 8.99996H1.14697L2.68319 4.63632H3.65904L5.19739 8.99996H4.35364L3.18816 5.53121H3.15407L1.99072 8.99996ZM2.01842 7.28902H4.31955V7.92397H2.01842V7.28902ZM5.77214 8.99996V4.63632H7.4426C7.75794 4.63632 8.02001 4.68604 8.22882 4.78547C8.43905 4.88348 8.59601 5.01772 8.6997 5.18817C8.80482 5.35862 8.85737 5.55181 8.85737 5.76772C8.85737 5.94527 8.82328 6.09726 8.7551 6.22368C8.68692 6.34868 8.5953 6.45024 8.48024 6.52837C8.36518 6.60649 8.23663 6.6626 8.09459 6.69669V6.73931C8.24942 6.74783 8.39785 6.79541 8.5399 6.88206C8.68337 6.96729 8.80055 7.08803 8.89146 7.24428C8.98237 7.40053 9.02783 7.58945 9.02783 7.81104C9.02783 8.03689 8.97314 8.24002 8.86376 8.42041C8.75439 8.59939 8.58962 8.74073 8.36945 8.84442C8.14928 8.94811 7.87229 8.99996 7.53848 8.99996H5.77214ZM6.56263 8.33945H7.41277C7.6997 8.33945 7.90638 8.28476 8.0328 8.17539C8.16064 8.06459 8.22456 7.92255 8.22456 7.74925C8.22456 7.61999 8.1926 7.50351 8.12868 7.39982C8.06476 7.2947 7.97385 7.21232 7.85595 7.15266C7.73805 7.09158 7.59743 7.06104 7.43408 7.06104H6.56263V8.33945ZM6.56263 6.49215H7.34459C7.48095 6.49215 7.60382 6.46729 7.7132 6.41757C7.82257 6.36644 7.90851 6.2947 7.97101 6.20237C8.03493 6.10862 8.06689 5.99783 8.06689 5.86999C8.06689 5.70095 8.00723 5.56175 7.88791 5.45237C7.77001 5.343 7.59459 5.28831 7.36163 5.28831H6.56263V6.49215ZM13.4506 6.10862H12.6538C12.631 5.97794 12.5891 5.86218 12.5281 5.76132C12.467 5.65905 12.391 5.5724 12.3001 5.50138C12.2092 5.43036 12.1055 5.37709 11.989 5.34158C11.8739 5.30465 11.7496 5.28618 11.6161 5.28618C11.3789 5.28618 11.1687 5.34584 10.9854 5.46516C10.8022 5.58306 10.6587 5.75635 10.555 5.98505C10.4513 6.21232 10.3995 6.49002 10.3995 6.81814C10.3995 7.15195 10.4513 7.4332 10.555 7.66189C10.6602 7.88916 10.8036 8.06104 10.9854 8.17752C11.1687 8.29257 11.3782 8.3501 11.614 8.3501C11.7447 8.3501 11.8668 8.33306 11.9805 8.29897C12.0955 8.26345 12.1985 8.21161 12.2894 8.14343C12.3817 8.07524 12.4592 7.99144 12.5217 7.89201C12.5856 7.79257 12.6296 7.67894 12.6538 7.5511L13.4506 7.55536C13.4208 7.76274 13.3562 7.95735 13.2567 8.13916C13.1587 8.32098 13.0302 8.48149 12.8711 8.6207C12.712 8.75848 12.5259 8.86644 12.3129 8.94456C12.0998 9.02127 11.8633 9.05962 11.6033 9.05962C11.2198 9.05962 10.8775 8.97084 10.5763 8.79328C10.2752 8.61573 10.038 8.35934 9.86465 8.02411C9.69136 7.68888 9.60471 7.28689 9.60471 6.81814C9.60471 6.34797 9.69207 5.94598 9.86678 5.61218C10.0415 5.27695 10.2795 5.02056 10.5806 4.843C10.8817 4.66544 11.2227 4.57666 11.6033 4.57666C11.8462 4.57666 12.0721 4.61076 12.2809 4.67894C12.4897 4.74712 12.6758 4.84726 12.8391 4.97936C13.0025 5.11005 13.1367 5.27056 13.2418 5.4609C13.3484 5.64982 13.418 5.86573 13.4506 6.10862Z" fill={fill}/>
+  </svg>
+);
+
+// Icon 3
+export const TextCompIcon = ({ className = "", width = 24, height = 24, stroke = "currentColor" }) => (
+  <svg width={width} height={height} viewBox="0 0 24 24" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+    <path d="M4.71899 11.396H11.095" stroke={stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M7.914 4L4.026 13.014" stroke={stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M11.7889 13.014L7.91394 4" stroke={stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M20 7.56201V13" stroke={stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M19.199 8.3491C20.267 9.4171 20.267 11.1481 19.199 12.2151C18.131 13.2831 16.4 13.2831 15.333 12.2151C14.265 11.1471 14.265 9.4161 15.333 8.3491C16.4 7.2811 18.132 7.2811 19.199 8.3491Z" stroke={stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M4 17H20" stroke={stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M16 21H4" stroke={stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);

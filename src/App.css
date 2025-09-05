@@ -36,12 +36,7 @@
     transform: rotate(360deg);
   }
 }
-@font-face {
-  font-family: 'Protos';
-  src: url('./Assets/fonts/Protos-D1nx.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+
 body {
   font-family: 'Protos', sans-serif;
   
